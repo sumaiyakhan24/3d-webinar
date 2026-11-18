@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apex Growth | 0 to Hero Personal Branding on LinkedIn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=Source+Code+Pro:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0a2540;
+    --navy-soft: #334e68;
+    --amber: #b45309;
+    --amber-light: #fef3c7;
+    --slate-300: #cbd5e1;
+    --slate-200: #e2e8f0;
+    --slate-100: #f1f5f9;
+    --slate-50: #f8fafc;
+    --ink: #0f172a;
+    --muted: #64748b;
+    --green: #047857;
+    --red: #b91c1c;
+    --display: 'Afacad Flux', 'Segoe UI', sans-serif;
+    --body: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif;
+    --mono: 'Source Code Pro', ui-monospace, monospace;
+    --shadow: 0 1px 1px rgba(0,0,0,0.05);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+  body { font-family: var(--body); color: var(--ink); background: #fff; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  img, svg { display: block; max-width: 100%; }
+
+  .container { width: 100%; max-width: 1152px; margin: 0 auto; padding: 0 32px; }
+  .section { padding: 96px 64px; border-bottom: 1px solid rgba(203,213,225,0.6); }
+
+  .eyebrow { font-family: var(--mono); font-weight: 600; font-size: 13px; letter-spacing: 0.65px; text-transform: uppercase; color: var(--amber); }
+  .h2 { font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 48px; letter-spacing: -0.5px; color: var(--navy); }
+  .lead { font-size: 18px; line-height: 28px; color: var(--navy-soft); }
+  .section-head { max-width: 768px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+
+  /* Buttons */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--body); font-weight: 600; font-size: 14px; border-radius: 12px; padding: 16px 28px; border: 1px solid transparent; cursor: pointer; transition: transform .15s ease, background .15s ease, box-shadow .15s ease; box-shadow: var(--shadow); white-space: nowrap; }
+  .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+  .btn-amber { background: var(--amber); color: #fff; }
+  .btn-navy { background: var(--navy); color: #fff; }
+  .btn-outline { background: #fff; color: var(--navy); border-color: var(--slate-300); box-shadow: none; }
+  .btn-ghost { background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.2); box-shadow: none; }
+  .btn-block { width: 100%; }
+  .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+  /* Header */
+  header.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(255,255,255,0.95); border-bottom: 1px solid rgba(203,213,225,0.7); backdrop-filter: blur(6px); }
+  .nav-inner { height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .logo { width: 40px; height: 40px; border-radius: 12px; background: var(--navy); color: #fff; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 20px; box-shadow: var(--shadow); }
+  .brand-name { font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: -0.45px; color: var(--navy); line-height: 22px; }
+  .brand-sub { font-size: 12px; font-weight: 500; color: var(--navy-soft); letter-spacing: 0.3px; }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a { font-weight: 600; font-size: 14px; color: var(--navy-soft); }
+  .nav-links a:hover { color: var(--navy); }
+  .badge-offer { background: var(--amber-light); color: var(--amber); font-family: var(--body); font-weight: 700; font-size: 12px; letter-spacing: 0.6px; text-transform: uppercase; padding: 2px 6px; border-radius: 10px; margin-left: 6px; }
+  .nav-ctas { display: flex; gap: 12px; align-items: center; }
+  .nav-ctas .btn { padding: 11px 17px; }
+  .nav-ctas .btn-navy { padding: 10px 20px; }
+  .menu-toggle { display: none; background: none; border: 1px solid var(--slate-300); border-radius: 10px; padding: 8px 12px; font-weight: 600; color: var(--navy); cursor: pointer; }
+
+  /* Hero */
+  .hero { position: relative; overflow: hidden; padding: 160px 96px 97px; border-bottom: 1px solid rgba(203,213,225,0.4); }
+  .hero::before { content: ""; position: absolute; inset: 0; opacity: .03; background-image: radial-gradient(circle at 50% 50%, var(--navy) 6%, transparent 6.1%); background-size: 24px 24px; pointer-events: none; }
+  .hero-grid { position: relative; display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 32px; align-items: center; }
+  .hero-left { grid-column: 1 / span 7; display: flex; flex-direction: column; gap: 24px; }
+  .hero-right { grid-column: 8 / span 5; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; background: var(--slate-100); border: 1px solid rgba(203,213,225,0.8); border-radius: 9999px; padding: 7px 15px; font-weight: 600; font-size: 12px; color: var(--ink); align-self: flex-start; }
+  .pill svg { width: 16px; height: 16px; color: var(--amber); }
+  .hero h1 { font-family: var(--display); font-weight: 800; font-size: 52px; line-height: 60px; letter-spacing: -1px; color: var(--navy); }
+  .hero h1 .underline { text-decoration: underline; text-decoration-color: var(--amber); text-decoration-thickness: 4px; text-underline-offset: 6px; }
+  .hero .sub { font-size: 18px; line-height: 28px; color: var(--navy-soft); max-width: 672px; }
+  .support { background: var(--slate-50); border: 1px solid rgba(203,213,225,0.6); border-radius: 16px; padding: 17px; display: flex; gap: 12px; align-items: flex-start; max-width: 672px; }
+  .support svg { width: 20px; height: 20px; color: var(--amber); margin-top: 2px; flex-shrink: 0; }
+  .support p { font-size: 16px; line-height: 24px; color: var(--ink); font-weight: 500; }
+  .cta-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; padding-top: 8px; }
+  .trust-row { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; padding-top: 8px; }
+  .trust-item { display: flex; gap: 6px; align-items: center; font-size: 12px; font-weight: 600; color: var(--navy-soft); }
+  .trust-item svg { width: 16px; height: 16px; color: var(--green); }
+
+  .preview { background: var(--slate-50); border: 1px solid var(--slate-300); border-radius: 24px; padding: 33px; display: flex; flex-direction: column; gap: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); position: relative; }
+  .preview-head { display: flex; justify-content: space-between; align-items: center; padding-bottom: 17px; border-bottom: 1px solid rgba(203,213,225,0.7); }
+  .dots { display: flex; gap: 8px; }
+  .dots span { width: 12px; height: 12px; border-radius: 9999px; }
+  .mono-label { font-family: var(--mono); font-size: 13px; letter-spacing: 0.65px; text-transform: uppercase; color: var(--navy-soft); font-weight: 500; }
+  .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .ba-card { background: #fff; border: 1px solid rgba(203,213,225,0.6); border-radius: 16px; padding: 16px; min-height: 154px; position: relative; display: flex; flex-direction: column; gap: 10px; }
+  .ba-card.after { border: 2px solid rgba(180,83,9,0.4); }
+  .tag { align-self: flex-start; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
+  .tag.before { background: #fef2f2; color: var(--red); }
+  .tag.after { background: var(--amber-light); color: var(--amber); }
+  .ba-metric { font-size: 14px; color: var(--navy-soft); display: flex; gap: 4px; align-items: center; }
+  .ba-metric.strong { color: var(--amber); font-weight: 600; }
+  .ba-desc { font-size: 14px; line-height: 19px; color: var(--navy-soft); }
+  .ba-card.after .ba-desc { color: var(--ink); font-weight: 500; }
+  .metrics { background: #fff; border: 1px solid rgba(203,213,225,0.6); border-radius: 16px; padding: 17px; display: flex; flex-direction: column; gap: 12px; }
+  .metrics-top { display: flex; justify-content: space-between; align-items: center; }
+  .metrics-title { font-weight: 600; font-size: 16px; color: var(--navy); }
+  .up { font-family: var(--mono); font-weight: 600; font-size: 13px; color: var(--green); }
+  .bar-labels { display: flex; justify-content: space-between; font-size: 12px; font-weight: 500; color: var(--navy-soft); }
+  .bar { height: 8px; border-radius: 9999px; background: var(--slate-200); overflow: hidden; margin-top: 8px; }
+  .bar span { display: block; height: 100%; width: 88%; background: var(--navy); border-radius: 9999px; }
+  .status { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; color: var(--navy-soft); padding-top: 4px; gap: 8px; flex-wrap: wrap; }
+  .callout { background: var(--navy); color: #fff; border-radius: 16px; padding: 12px; display: flex; gap: 12px; align-items: center; }
+  .callout-icon { width: 32px; height: 32px; border-radius: 9999px; background: var(--amber); display: grid; place-items: center; flex-shrink: 0; }
+  .callout-icon svg { width: 16px; height: 16px; }
+  .callout strong { display: block; font-size: 16px; line-height: 24px; }
+  .callout span { font-size: 14px; line-height: 20px; opacity: .9; }
+
+  /* Achievement */
+  .achieve { background: var(--slate-50); }
+  .achieve-wrap { max-width: 1152px; margin: 0 auto; display: flex; flex-direction: column; gap: 64px; align-items: center; }
+  .points { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; width: 100%; }
+  .point { background: #fff; border: 1px solid rgba(203,213,225,0.7); border-radius: 24px; padding: 33px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow); }
+  .icon-box { width: 48px; height: 48px; border-radius: 16px; background: var(--slate-100); display: grid; place-items: center; }
+  .icon-box svg { width: 24px; height: 24px; color: var(--navy); }
+  .point h3 { font-family: var(--display); font-weight: 600; font-size: 20px; line-height: 28px; color: var(--navy); }
+  .point p { font-size: 16px; line-height: 24px; color: var(--navy-soft); }
+  .point.dark { background: var(--navy); border-color: var(--navy); }
+  .point.dark .mono-label { color: #fde68a; }
+  .point.dark h3 { color: #fff; font-size: 24px; line-height: 33px; }
+  .point.dark .tagline { font-size: 14px; font-weight: 500; color: #fff; display: flex; gap: 8px; align-items: center; border-top: 1px solid rgba(51,78,104,0.6); padding-top: 17px; margin-top: auto; }
+  .point.dark .tagline svg { width: 19px; height: 20px; }
+  .closing { font-family: var(--display); font-weight: 700; font-size: 24px; line-height: 32px; color: var(--navy); text-align: center; }
+
+  /* Lead form */
+  .form-section { padding: 96px 224px; border-bottom: 1px solid rgba(203,213,225,0.6); background: #fff; }
+  .form-card { background: var(--slate-50); border: 1px solid var(--slate-300); border-radius: 16px; padding: 49px 128px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); display: flex; flex-direction: column; gap: 40px; align-items: center; }
+  .form-head { max-width: 576px; text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+  .form-head h2 { font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 48px; color: var(--navy); letter-spacing: -0.5px; }
+  .form-head p { font-size: 18px; line-height: 28px; color: var(--navy-soft); }
+  .lead-form { width: 100%; max-width: 576px; display: flex; flex-direction: column; gap: 24px; }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .field label { font-weight: 600; font-size: 14px; color: var(--ink); }
+  .input-wrap { position: relative; }
+  .input-wrap svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--muted); pointer-events: none; }
+  .input-wrap input { width: 100%; background: #fff; border: 1px solid var(--slate-300); border-radius: 12px; padding: 17px 17px 17px 45px; font: 400 16px var(--body); color: var(--ink); outline: none; transition: border-color .15s, box-shadow .15s; }
+  .input-wrap input::placeholder { color: var(--muted); }
+  .input-wrap input:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(10,37,64,0.12); }
+  .form-status { font-size: 14px; font-weight: 600; min-height: 20px; text-align: center; }
+  .form-status.ok { color: var(--green); }
+  .form-status.err { color: var(--red); }
+  .trust-line { display: flex; gap: 6px; align-items: center; justify-content: center; font-size: 14px; color: var(--navy-soft); }
+  .trust-line svg { width: 16px; height: 16px; color: var(--green); }
+  button[disabled] { opacity: .7; cursor: wait; transform: none; }
+
+  /* Audit */
+  .audit-section { padding: 96px 160px; border-bottom: 1px solid rgba(203,213,225,0.6); background: #fff; }
+  .audit-card { background: linear-gradient(to bottom, var(--slate-50), #fff); border: 2px solid rgba(180,83,9,0.3); border-radius: 16px; box-shadow: var(--shadow-lg); padding: 66px; display: flex; flex-direction: column; gap: 24px; }
+  .top-badge { align-self: flex-start; background: var(--amber-light); color: var(--amber); font-weight: 600; font-size: 12px; padding: 6px 14px; border-radius: 9999px; display: inline-flex; gap: 8px; align-items: center; }
+  .top-badge svg { width: 16px; height: 16px; }
+  .audit-grid { display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 40px; align-items: center; }
+  .audit-info { grid-column: 1 / span 7; display: flex; flex-direction: column; gap: 16px; }
+  .audit-info h2 { font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 48px; color: var(--navy); letter-spacing: -0.5px; }
+  .audit-info h2 span { color: var(--amber); text-decoration: underline wavy rgba(180,83,9,0.4); text-decoration-thickness: 4px; text-underline-offset: 6px; }
+  .audit-info > p { font-size: 18px; line-height: 28px; color: var(--ink); }
+  .checklist { display: flex; flex-direction: column; gap: 14px; padding-top: 16px; }
+  .checklist h4 { font-family: var(--display); font-weight: 600; font-size: 20px; color: var(--navy); line-height: 28px; }
+  .check { display: flex; gap: 12px; align-items: flex-start; }
+  .check .dot { width: 24px; height: 24px; border-radius: 9999px; background: var(--amber-light); display: grid; place-items: center; flex-shrink: 0; margin-top: 2px; }
+  .check .dot svg { width: 14px; height: 14px; color: var(--amber); }
+  .check strong { display: block; font-weight: 600; font-size: 16px; line-height: 24px; color: var(--ink); }
+  .check span { display: block; font-size: 14px; line-height: 20px; color: var(--navy-soft); }
+  .price-box { grid-column: 8 / span 5; background: #fff; border: 1px solid rgba(203,213,225,0.8); border-radius: 24px; padding: 33px; display: flex; flex-direction: column; gap: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
+  .price-top { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
+  .price-label { font-weight: 600; font-size: 12px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--navy-soft); }
+  .price-row { display: flex; gap: 8px; align-items: center; justify-content: center; }
+  .price-now { font-family: var(--display); font-weight: 800; font-size: 52px; line-height: 60px; letter-spacing: -1px; color: var(--navy); }
+  .price-was { font-size: 14px; color: var(--muted); text-decoration: line-through; }
+  .guarantee { font-weight: 600; font-size: 12px; color: var(--amber); }
+  .rationale { background: var(--slate-50); border: 1px solid rgba(203,213,225,0.6); border-radius: 16px; padding: 17px; display: flex; flex-direction: column; gap: 4px; }
+  .rationale strong { font-size: 14px; color: var(--navy); }
+  .rationale p { font-size: 14px; line-height: 20px; color: var(--navy-soft); }
+  .price-box .btn { width: 100%; }
+  .price-note { text-align: center; font-size: 12px; font-weight: 600; color: var(--navy-soft); line-height: 16px; }
+
+  /* Testimonials */
+  .reviews { background: var(--slate-50); }
+  .reviews-wrap { max-width: 1152px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; align-items: center; }
+  .testi-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; width: 100%; padding-top: 8px; }
+  .testi { background: #fff; border: 1px solid rgba(203,213,225,0.7); border-radius: 24px; padding: 33px; display: flex; flex-direction: column; gap: 24px; box-shadow: var(--shadow); }
+  .stars { display: flex; gap: 4px; }
+  .stars svg { width: 18px; height: 18px; color: #facc15; }
+  .quote { font-style: italic; font-size: 18px; line-height: 28px; color: var(--ink); }
+  .author { border-top: 1px solid rgba(203,213,225,0.5); padding-top: 17px; display: flex; gap: 12px; align-items: center; margin-top: auto; }
+  .avatar { width: 40px; height: 40px; border-radius: 9999px; background: var(--slate-100); display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 14px; color: var(--navy); flex-shrink: 0; }
+  .author strong { display: block; font-size: 16px; color: var(--navy); line-height: 24px; font-weight: 600; }
+  .author span { font-size: 14px; color: var(--navy-soft); line-height: 20px; }
+  .closing-line { font-family: var(--display); font-weight: 700; font-size: 24px; color: var(--navy); }
+
+  /* FAQ */
+  .faq-wrap { max-width: 896px; margin: 0 auto; display: flex; flex-direction: column; gap: 64px; align-items: center; }
+  .faq-list { display: flex; flex-direction: column; gap: 16px; width: 100%; }
+  details { background: #fff; border: 1px solid rgba(203,213,225,0.8); border-radius: 24px; padding: 25px; }
+  details[open] { background: var(--slate-50); }
+  summary { list-style: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; font-size: 18px; line-height: 26px; color: var(--navy); gap: 16px; }
+  summary::-webkit-details-marker { display: none; }
+  summary svg { width: 18px; height: 18px; color: var(--navy-soft); flex-shrink: 0; transition: transform .2s ease; }
+  details[open] summary svg { transform: rotate(180deg); }
+  details p { margin-top: 17px; padding-top: 17px; border-top: 1px solid rgba(203,213,225,0.4); font-size: 16px; line-height: 26px; color: var(--navy-soft); }
+
+  /* Bottom banner */
+  .banner { background: var(--navy); padding: 56px 128px; }
+  .banner-inner { max-width: 1024px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; align-items: center; text-align: center; }
+  .banner h2 { font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 48px; color: #fff; letter-spacing: -0.5px; }
+  .banner p { font-size: 18px; line-height: 28px; color: rgba(255,255,255,0.8); max-width: 576px; }
+  .banner .cta-row { justify-content: center; }
+
+  /* Footer */
+  footer { border-top: 1px solid rgba(203,213,225,0.7); padding: 65px 64px 48px; background: #fff; }
+  .footer-grid { max-width: 1152px; margin: 0 auto; display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 32px; }
+  .f-brand { grid-column: 1 / span 6; display: flex; flex-direction: column; gap: 16px; }
+  .f-brand .brand-line { display: flex; align-items: center; gap: 10px; }
+  .f-brand .logo { width: 36px; height: 36px; font-size: 20px; }
+  .f-brand .brand-name { font-size: 20px; line-height: 28px; letter-spacing: 0; }
+  .f-brand p { font-size: 16px; line-height: 24px; color: var(--navy-soft); max-width: 384px; }
+  .f-brand .contact { display: flex; gap: 8px; align-items: center; font-size: 14px; color: var(--navy-soft); }
+  .f-brand .contact svg { width: 16px; height: 16px; }
+  .f-col { display: flex; flex-direction: column; gap: 12px; }
+  .f-col.links { grid-column: 7 / span 3; }
+  .f-col.promise { grid-column: 10 / span 3; }
+  .f-col h5 { font-family: var(--display); font-weight: 600; font-size: 20px; line-height: 28px; color: var(--navy); }
+  .f-col a, .f-col .item { font-weight: 600; font-size: 12px; color: var(--navy-soft); }
+  .f-col .links-list { display: flex; flex-direction: column; gap: 10px; }
+  .f-col p { font-size: 14px; line-height: 20px; color: var(--navy-soft); }
+  .secure { display: flex; gap: 6px; align-items: center; font-weight: 600; font-size: 12px; color: var(--amber); padding-top: 4px; }
+  .secure svg { width: 16px; height: 16px; }
+  .f-bottom { max-width: 1152px; margin: 48px auto 0; border-top: 1px solid rgba(203,213,225,0.5); padding-top: 33px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 14px; color: var(--navy-soft); }
+  .f-bottom nav { display: flex; gap: 24px; }
+
+  /* Responsive */
+  @media (max-width: 1100px) {
+    .section, .audit-section { padding: 80px 40px; }
+    .form-section { padding: 80px 40px; }
+    .form-card { padding: 40px 48px; }
+    .hero { padding: 140px 40px 80px; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 900px) {
+    .hero-grid, .audit-grid { grid-template-columns: 1fr; }
+    .hero-left, .hero-right, .audit-info, .price-box, .f-brand, .f-col.links, .f-col.promise { grid-column: 1 / -1; }
+    .hero h1 { font-size: 42px; line-height: 50px; }
+    .points, .testi-grid { grid-template-columns: 1fr; }
+    .point.dark { order: 99; }
+    .audit-card { padding: 32px; }
+    .price-box { padding: 24px; }
+    .menu-toggle { display: inline-block; }
+    .nav-ctas .btn-outline { display: none; }
+    .footer-grid { gap: 28px; }
+    .f-col.links, .f-col.promise { grid-column: span 6; }
+    .banner { padding: 56px 24px; }
+    .h2, .form-head h2, .audit-info h2, .banner h2, .section-head .h2 { font-size: 32px; line-height: 40px; }
+  }
+  @media (max-width: 600px) {
+    .container { padding: 0 20px; }
+    .section, .audit-section, .form-section { padding: 64px 20px; }
+    .hero { padding: 120px 20px 64px; }
+    .hero h1 { font-size: 34px; line-height: 42px; }
+    .hero .sub, .lead { font-size: 16px; line-height: 24px; }
+    .form-card { padding: 32px 20px; }
+    .ba { grid-template-columns: 1fr; }
+    .nav-ctas .btn-navy { display: none; }
+    .btn { white-space: normal; width: 100%; }
+    .cta-row { flex-direction: column; align-items: stretch; }
+    .f-col.links, .f-col.promise { grid-column: 1 / -1; }
+    .f-bottom { flex-direction: column; align-items: flex-start; }
+    .price-now { font-size: 44px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top">
+      <div class="logo">in</div>
+      <div>
+        <div class="brand-name">Apex Growth</div>
+        <div class="brand-sub">0 to Hero Personal Branding</div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="#top">Home</a>
+      <a href="#results">Results</a>
+      <a href="#audit">Audit (₹1)<span class="badge-offer">Offer</span></a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-ctas">
+      <a class="btn btn-outline" href="#lead-form">Get Profile Audit</a>
+      <a class="btn btn-navy" href="#lead-form">Start Growing Today</a>
+      <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        LinkedIn Growth: Strategy • Scripting • Management
+      </div>
+      <h1>Turn Your LinkedIn From<br /><span class="underline">Invisible</span> to Influential</h1>
+      <p class="sub">We don't just "optimize profiles." We build your personal brand from scratch — with strategy, content, and consistency that actually gets you seen.</p>
+      <div class="support">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg>
+        <p>From 0 to hero on LinkedIn — without confusion, guesswork, or wasting months figuring it out alone.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-amber" href="https://payments.cashfree.com/forms/getaudit" target="_blank" rel="noopener">
+          Get Your Profile Audit
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a class="btn btn-outline" href="#lead-form">Start Growing Today</a>
+      </div>
+      <div class="trust-row">
+        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Zero to 10k+ followers method</span>
+        <span class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>100% Organic strategy</span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="preview">
+        <div class="preview-head">
+          <div class="dots"><span style="background:#f87171"></span><span style="background:#facc15"></span><span style="background:#4ade80"></span></div>
+          <div class="mono-label">Live System Output</div>
+        </div>
+        <div class="ba">
+          <div class="ba-card">
+            <span class="tag before">BEFORE: 0 Visibility</span>
+            <div class="ba-metric">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#334e68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+              12 views / wk
+            </div>
+            <p class="ba-desc">Random updates, no positioning, 0 inbound inquiries.</p>
+          </div>
+          <div class="ba-card after">
+            <span class="tag after">AFTER: Hero Status</span>
+            <div class="ba-metric strong">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              34.8k impressions
+            </div>
+            <p class="ba-desc">Authority hooks, daily qualified DM leads.</p>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metrics-top">
+            <div class="metrics-title">Weekly Pipeline Impact</div>
+            <div class="up">▲ +380%</div>
+          </div>
+          <div>
+            <div class="bar-labels"><span>Profile Conversions</span><span>High Intent</span></div>
+            <div class="bar"><span></span></div>
+          </div>
+          <div class="status">
+            <span>Strategy: Complete</span><span>Scripting: Active</span><span>Execution: Done</span>
+          </div>
+        </div>
+        <div class="callout">
+          <div class="callout-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <strong>100+ Executives &amp; Creators</strong>
+            <span>Transformed from silent observers to trusted industry voices.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. ACHIEVEMENTS -->
+<section class="section achieve" id="results">
+  <div class="achieve-wrap">
+    <div class="section-head">
+      <div class="eyebrow">Proven Track Record</div>
+      <h2 class="h2">Real Growth. Real Results.</h2>
+      <p class="lead">Measurable traction engineered through deliberate authority architecture, not vanity metrics.</p>
+    </div>
+    <div class="points">
+      <article class="point">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 11l2 2 4-4"/></svg></div>
+        <h3>Helped 100+ professionals build authority on LinkedIn</h3>
+        <p>From corporate leaders to independent consultants, establishing them as the default choice in their sector.</p>
+      </article>
+      <article class="point">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Generated consistent inbound leads through content</h3>
+        <p>Turn your posts into frictionless client acquisition engines without ever sending spammy cold connection notes.</p>
+      </article>
+      <article class="point">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
+        <h3>Built personal brands from absolute zero on LinkedIn</h3>
+        <p>No existing audience? No problem. We craft the baseline positioning and early narrative that builds instant traction.</p>
+      </article>
+      <article class="point">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Content that reaches thousands organically</h3>
+        <p>High-retention storytelling, crisp hooks, and insights that beat algorithmic fatigue and spark engaged discussion.</p>
+      </article>
+      <article class="point">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v4H3zM3 11h18v10H3z"/></svg></div>
+        <h3>Profiles that convert views into opportunities</h3>
+        <p>Re-architecting headers, featured assets, and about sections into high-converting conversion funnels.</p>
+      </article>
+      <article class="point dark">
+        <div>
+          <div class="mono-label">The Methodology</div>
+          <h3 style="margin-top:8px">Strategy. Scripting. Done-with-you Management.</h3>
+        </div>
+        <div class="tagline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fde68a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Predictable execution every single week.
+        </div>
+      </article>
+    </div>
+    <div class="closing">This isn't luck. It's a system that works.</div>
+  </div>
+</section>
+
+<!-- 3. LEAD FORM -->
+<section class="form-section" id="lead-form">
+  <div class="form-card">
+    <div class="form-head">
+      <div class="eyebrow">Custom Roadmap</div>
+      <h2>Let's Build Your LinkedIn<br />Presence Together</h2>
+      <p>Tell us a bit about you — and we'll show you exactly how to grow.</p>
+    </div>
+
+    <form class="lead-form" id="leadForm" novalidate>
+      <div class="field">
+        <label for="name">Full Name</label>
+        <div class="input-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <input id="name" name="name" type="text" placeholder="e.g. Jordan Vance" autocomplete="name" required />
+        </div>
+      </div>
+      <div class="field">
+        <label for="email">Work Email</label>
+        <div class="input-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          <input id="email" name="email" type="email" placeholder="jordan@company.com" autocomplete="email" required />
+        </div>
+      </div>
+      <div class="field">
+        <label for="phone">Phone Number</label>
+        <div class="input-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <input id="phone" name="phone" type="tel" placeholder="+1 (555) 000-0000" autocomplete="tel" required />
+        </div>
+      </div>
+      <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+      <button class="btn btn-navy btn-block" type="submit" id="submitBtn">
+        Get My Growth Plan
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <div class="trust-line">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        No spam. No fluff. Just actionable clarity.
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- 4. AUDIT - RUPEE 1 -->
+<section class="audit-section" id="audit">
+  <div class="audit-card">
+    <div class="top-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+      Signature Introductory Opportunity
+    </div>
+    <div class="audit-grid">
+      <div class="audit-info">
+        <h2>Get a Complete LinkedIn<br />Audit for Just <span>Rupee 1</span></h2>
+        <p>Not a sales call. A real breakdown of what's working, what's not, and what to fix.</p>
+        <div class="checklist">
+          <h4>What You'll Receive:</h4>
+          <div class="check">
+            <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <div><strong>Profile review</strong><span>In-depth teardown of your headline, banner &amp; positioning architecture.</span></div>
+          </div>
+          <div class="check">
+            <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <div><strong>Content gap analysis</strong><span>Pinpoint why previous posts stalled and what hooks your audience actually needs.</span></div>
+          </div>
+          <div class="check">
+            <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <div><strong>Personal brand direction</strong><span>Strategic clarity on your core content pillars and distinct authority voice.</span></div>
+          </div>
+          <div class="check">
+            <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <div><strong>Clear action steps to improve visibility</strong><span>An immediate checklist you can implement the very next morning.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="price-box">
+        <div class="price-top">
+          <div class="price-label">One-on-One Session</div>
+          <div class="price-row">
+            <div class="price-now">₹1</div>
+            <div class="price-was">₹4,999</div>
+          </div>
+          <div class="guarantee">100% Value Guarantee</div>
+        </div>
+        <div class="rationale">
+          <strong>Why Rupee 1?</strong>
+          <p>Because once you see the value, you'll know what to do next. We prove capability first before asking for any commitment.</p>
+        </div>
+        <a class="btn btn-amber" href="https://payments.cashfree.com/forms/getaudit" target="_blank" rel="noopener">
+          Book My Audit Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <div class="price-note">Instant confirmation • 30-minute dedicated teardown</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 5. TESTIMONIALS -->
+<section class="section reviews" id="reviews">
+  <div class="reviews-wrap">
+    <div class="section-head">
+      <div class="eyebrow">Client Proof</div>
+      <h2 class="h2">What Our Clients Say</h2>
+      <p class="lead">Unfiltered feedback from professionals who turned dormant profiles into industry authority.</p>
+    </div>
+    <div class="testi-grid">
+      <article class="testi">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <p class="quote">"I had zero presence before this. Within weeks, I started getting inbound messages and profile views."</p>
+        <div class="author"><div class="avatar">MK</div><div><strong>Manish Kapoor</strong><span>SaaS Founder &amp; Angel Investor</span></div></div>
+      </article>
+      <article class="testi">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <p class="quote">"The clarity I got here saved me months of trial and error."</p>
+        <div class="author"><div class="avatar">RP</div><div><strong>Rhea Prasad</strong><span>Senior Product Marketing Lead</span></div></div>
+      </article>
+      <article class="testi">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <p class="quote">"It's not just content — it's a full strategy. That's what made the difference."</p>
+        <div class="author"><div class="avatar">AS</div><div><strong>Aman Singhania</strong><span>Management Consultant</span></div></div>
+      </article>
+      <article class="testi">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </div>
+        <p class="quote">"I finally understand how LinkedIn actually works."</p>
+        <div class="author"><div class="avatar">DT</div><div><strong>Divya Tyagi</strong><span>Executive Career Transitioner</span></div></div>
+      </article>
+    </div>
+    <div class="closing-line">Results speak louder than promises.</div>
+  </div>
+</section>
+
+<!-- 6. FAQ -->
+<section class="section" id="faq">
+  <div class="faq-wrap">
+    <div class="section-head">
+      <div class="eyebrow">Got Questions?</div>
+      <h2 class="h2">Frequently Asked Questions</h2>
+      <p class="lead">Everything you need to know about our strategy, scripting, and management process.</p>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>Who is this service for? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>Anyone who wants to grow on LinkedIn, whether starting from zero or scaling their presence.</p>
+      </details>
+      <details>
+        <summary>Do you create content for me? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>Yes. We handle strategy, scripting, and done-with-you management so your posts stay consistent and in your voice.</p>
+      </details>
+      <details>
+        <summary>How long does it take to see results? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>Most clients see early traction within weeks as their positioning and content cadence take hold.</p>
+      </details>
+      <details>
+        <summary>Is this only for job seekers? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>No. Consultants, founders, executives, and creators all use this to build authority and inbound opportunities.</p>
+      </details>
+      <details>
+        <summary>What makes this different? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>We focus on deliberate authority architecture and a repeatable system, not vanity metrics or quick tricks.</p>
+      </details>
+      <details>
+        <summary>Do I need prior experience on LinkedIn? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <p>Not at all. We build your personal brand from absolute zero if needed.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 7. BOTTOM BANNER -->
+<section class="banner">
+  <div class="banner-inner">
+    <h2>Ready to Turn Silence Into Inbound Influence?</h2>
+    <p>Claim your complete profile breakdown today for ₹1 and discover your highest-leverage growth opportunities.</p>
+    <div class="cta-row">
+      <a class="btn btn-amber" href="https://payments.cashfree.com/forms/getaudit" target="_blank" rel="noopener">Book My Audit Now (₹1)</a>
+      <a class="btn btn-ghost" href="#lead-form">Request Growth Roadmap</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 8. FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="brand-line">
+        <div class="logo">in</div>
+        <div class="brand-name">Apex Growth</div>
+      </div>
+      <p>Building personal brands that stand out — not blend in.</p>
+      <div class="contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Have questions? Reach out anytime.
+      </div>
+    </div>
+    <div class="f-col links">
+      <h5>Quick Links</h5>
+      <div class="links-list">
+        <a href="#top">Home</a>
+        <a href="#results">Services</a>
+        <a href="#audit">Book Audit</a>
+        <a href="#lead-form">Contact</a>
+      </div>
+    </div>
+    <div class="f-col promise">
+      <h5>Our Promise</h5>
+      <p>Strategy, scripting, and management built for sustainable organic influence and real business revenue.</p>
+      <div class="secure">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Secure 256-Bit Encrypted Data
+      </div>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <span>2026 All Rights Reserved. Built for those who are ready to be seen.</span>
+    <nav>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#lead-form">Get in Touch</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Apps Script Web App URL (deployed Code.gs)
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby9M6Y5X0vm5vCac2MrpH985mTIZq1927_i5KirlMpPfeRYA1oPVTV8sKYNSwBR-i5D/exec";
+
+  const form = document.getElementById("leadForm");
+  const statusEl = document.getElementById("formStatus");
+  const btn = document.getElementById("submitBtn");
+
+  function setStatus(msg, type) {
+    statusEl.textContent = msg;
+    statusEl.className = "form-status " + (type || "");
+  }
+
+  function showSuccess() {
+    setStatus("Thanks! We'll be in touch shortly with your growth plan.", "ok");
+    form.reset();
+    btn.disabled = false;
+    btn.firstChild.textContent = "Get My Growth Plan ";
+  }
+
+  function showError() {
+    setStatus("Something went wrong. Please try again.", "err");
+    btn.disabled = false;
+    btn.firstChild.textContent = "Get My Growth Plan ";
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+
+    if (!name || !email || !phone) {
+      setStatus("Please fill in your name, email, and phone.", "err");
+      return;
+    }
+
+    setStatus("", "");
+    btn.disabled = true;
+    btn.firstChild.textContent = "Sending... ";
+
+    const url = SCRIPT_URL + "?" + new URLSearchParams({ name: name, email: email, phone: phone });
+
+    fetch(url, { method: "GET", mode: "no-cors" })
+      .then(() => showSuccess())
+      .catch(() => showError());
+  });
+</script>
+
+</body>
+</html>
